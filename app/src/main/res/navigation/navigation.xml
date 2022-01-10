@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentTitle">
+    <fragment
+        android:id="@+id/fragmentTitle"
+        android:name="com.example.guessit.title.FragmentTitle"
+        android:label="FragmentTitle"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_fragmentTitle_to_fragmentGame"
+            app:destination="@id/fragmentGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGame"
+        android:name="com.example.guessit.game.FragmentGame"
+        android:label="FragmentGame"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_fragmentGame_to_fragmentScore"
+            app:destination="@id/fragmentScore"
+            app:popUpTo="@id/fragmentGame"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentScore"
+        android:name="com.example.guessit.score.FragmentScore"
+        android:label="FragmentScore"
+        tools:layout="@layout/fragment_score"/>
+</navigation>
